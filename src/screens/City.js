@@ -4,12 +4,24 @@ import { Feather } from '@expo/vector-icons';
 import IconText from "../components/Icontext";
 
 const City = () => {
-  const { container, cityName, cityText, countryName, populationWrapper, populationText, riseSetWrapper, riseSetText, rowLayout, imageLayout } = styles
+  const {
+    container,
+    cityName,
+    cityText,
+    countryName,
+    populationWrapper,
+    populationText,
+    riseSetWrapper,
+    riseSetText,
+    rowLayout,
+    imageLayout
+  } = styles
+  
   return (
     <SafeAreaView style={container}>
       <ImageBackground 
         source={require('../../assets/city-background.jpg')} 
-        style={styles.imageLayout}
+        style={imageLayout}
       >
         <Text style={[cityName, cityText]}>London</Text>
         <Text style={[countryName, cityText]}>UK</Text>
