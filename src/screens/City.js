@@ -1,7 +1,7 @@
 import React from "react";
 import { SafeAreaView, Text, StyleSheet, ImageBackground, StatusBar, View } from "react-native";
 import { Feather } from '@expo/vector-icons';
-import IconText from "../components/Icontext";
+import IconText from "../components/IconText";
 
 const City = () => {
   const {
@@ -16,7 +16,7 @@ const City = () => {
     rowLayout,
     imageLayout
   } = styles
-  
+
   return (
     <SafeAreaView style={container}>
       <ImageBackground 
