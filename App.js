@@ -8,9 +8,8 @@ import { useGetWeather } from "./src/hooks/useGetWeather"
 
 const App = () => {
   const [loading, error, weather] = useGetWeather()
-  console.log(loading, error, weather)
 
-  if (weather && weather.list) {
+  if (weather && weather.list && !loading) {
     return (
       <NavigationContainer>
         <Tabs weather={weather} />

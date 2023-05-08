@@ -11,10 +11,10 @@ export const useGetWeather = () => {
 
   const fetchWeatherData = async() => {
     try {
-      const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`)
-      const data = await response.json()
+      const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`)
+      const data = await res.json()
       setWeather(data)
-    } catch (error) {
+    } catch (err) {
       setError('Could not fetch weather')
     } finally {
       setLoading(false)
@@ -22,7 +22,7 @@ export const useGetWeather = () => {
 
   }
   useEffect(() => {
-    (async() => {
+    ;(async() => {
       let { status } = await Location.requestForegroundPermissionsAsync()
       if (status !== 'granted') {
         setError('permission to access location was denied')
